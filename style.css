@@ -1,0 +1,113 @@
+
+body{
+ background-image: url(img/background.avif);
+ background-repeat: no-repeat;
+ background-size:cover;
+ background-position: center;
+}
+
+p,
+span {
+ font-family: 'IBM Plex Serif', serif;
+ font-family: 'Overpass', sans-serif;
+ font-family: 'Playfair Display', serif;
+}
+
+section {
+ margin: 3% auto;
+ width: fit-content;
+}
+
+.card {
+ position: relative;
+ width: 80rem;
+ min-height: 100rem;
+ transition: transform 3s ;
+ transform-style: preserve-3d;
+}
+
+.card:hover {
+ transform: rotateY(.5turn);
+}
+
+.front,
+.back {
+ position: absolute;
+ left: 0;
+ right: 0;
+ top: 0;
+ bottom: 0;
+ backface-visibility: hidden;
+ text-align: center;
+ transform-style: preserve-3d;
+}
+
+.front {
+ background-image: url(img/Daisy.jpg);
+ background-repeat: no-repeat;
+ background-size:cover;
+ z-index: 1;
+}
+.front::after {
+ content: '';
+  border: 1px solid rgb(159, 154, 184);
+  transform: translateZ(10rem);
+ position: absolute;
+ left: 0;
+ right: 0;
+ top: 0;
+ bottom: 0;
+}
+
+.back {
+background-color: rgb(38, 46, 38);
+background-repeat: no-repeat;
+background-size:cover;
+transform: rotateY(.5turn);
+
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+p {
+ margin-top: 0;
+ font-size: 4rem;
+ font-weight: 700;
+ padding: 5rem;
+ color: rgb(39, 39, 39);
+ line-height:7rem;
+ background-color: rgba(255, 252, 240, 0.247);
+ transform: translateZ(20rem);
+}
+span {
+ font-size: 3rem;
+ font-style: italic;
+ color:rgb(255, 252, 240) ;
+ transform: translateZ(15rem);
+ display: block;
+}
+
+.front hr {
+ width: 50%;
+ opacity: 0.5;
+ color: rgb(159, 154, 184);
+ transform: translateZ(15rem);
+}
+
+
+.back svg {
+ transform: translateZ(15rem);
+ fill: white;
+ transition: transform 1s linear;
+}
+
+.back svg:hover {
+ transform: rotate(180deg);
+}
+
+.back p {
+ color: rgb(245, 241, 235);
+background: none;
+}
